@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Redirect } from 'react-router-dom';
 import AuthService from "../services/auth.service";
+import registerImg from '../images/register.png';
 
 type Props = {};
 
@@ -119,12 +120,12 @@ export default class Register extends Component<Props, State> {
     };
 
     return (
-      <div className="col-md-12">
+      <div className="col-md-6 mx-auto">
         <div className="card card-container">
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
+            src={registerImg}
+            alt="register-img"
+            className="auth-img-card"
           />
 
           <Formik
@@ -135,24 +136,35 @@ export default class Register extends Component<Props, State> {
             <Form>
               {!successful && (
                 <div>
-                  <div className="form-group">
-                    <label htmlFor="firstName"> First Name </label>
-                    <Field name="firstName" type="text" className="form-control" />
-                    <ErrorMessage
-                      name="firstName"
-                      component="div"
-                      className="alert alert-danger"     
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="lastName"> Last Name </label>
-                    <Field name="lastName" type="text" className="form-control" />
-                    <ErrorMessage
-                      name="lastName"
-                      component="div"
-                      className="alert alert-danger"
-                    />
-                  </div>
+
+
+                  <div className="row">
+                    <div className="col">
+
+                      <div className="form-group">
+                        <label htmlFor="firstName"> First Name </label>
+                        <Field name="firstName" type="text" className="form-control" />
+                        <ErrorMessage
+                          name="firstName"
+                          component="div"
+                          className="alert alert-danger"     
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col">
+                      <div className="form-group">
+                        <label htmlFor="lastName"> Last Name </label>
+                        <Field name="lastName" type="text" className="form-control" />
+                        <ErrorMessage
+                          name="lastName"
+                          component="div"
+                          className="alert alert-danger"
+                        />
+                      </div>
+                    </div>
+                </div>
+
 
                   <div className="form-group">
                     <label htmlFor="email"> Email </label>

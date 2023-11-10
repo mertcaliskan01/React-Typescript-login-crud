@@ -1,11 +1,9 @@
 import { Component } from "react";
-import { Redirect, Switch, Route, Link } from "react-router-dom";
+import { Redirect, Switch, Route, Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import AuthService from "./services/auth.service";
 import IUser from './types/user.type';
-
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
@@ -13,9 +11,11 @@ import Profile from "./components/profile.component";
 import AddBook from "./components/add-book.component";
 import Book from "./components/book.component";
 import BooksList from "./components/books-list.component";
-
-
 import EventBus from "./common/EventBus";
+
+
+
+
 
 type Props = {};
 

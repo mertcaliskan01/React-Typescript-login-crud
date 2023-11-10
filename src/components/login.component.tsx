@@ -4,6 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 import AuthService from "../services/auth.service";
+import profileImg from '../images/login.png';
 
 type Props = {};
 
@@ -94,12 +95,12 @@ export default class Login extends Component<Props, State> {
     };
 
     return (
-      <div className="col-md-12">
+      <div className="col-md-6 mx-auto">
         <div className="card card-container">
           <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            src={profileImg}
             alt="profile-img"
-            className="profile-img-card"
+            className="auth-img-card"
           />
 
           <Formik
@@ -129,7 +130,7 @@ export default class Login extends Component<Props, State> {
               </div>
 
               <div className="form-group">
-                <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
+                <button type="submit" className="btn btn-primary btn-block rounded-1" disabled={loading}>
                   {loading && (
                     <span className="spinner-border spinner-border-sm"></span>
                   )}
