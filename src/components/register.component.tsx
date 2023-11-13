@@ -109,7 +109,7 @@ export default class Register extends Component<Props, State> {
     const { successful, message } = this.state;
 
     if (successful) {
-      return <Redirect to="/home" />;
+      return <Redirect to="/login" />;
     }
 
     const initialValues = {

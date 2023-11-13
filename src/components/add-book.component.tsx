@@ -101,7 +101,7 @@ export default class AddBook extends Component<Props, State> {
       <div className="col-md-6 mx-auto">
 
         <div className="book_app__header-content">
-          <h1 className="list-heading gradient__text ">Add a New Book</h1>
+          <h1 className="list-heading gradient__text ">New Book</h1>
         </div>
 
         {submitted ? (

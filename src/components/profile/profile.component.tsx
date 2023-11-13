@@ -56,7 +56,10 @@ export default class Profile extends Component<Props, State> {
         </div>
 
         <div className="book_app__header-image">
-          <img src={ai} alt="" />
+          <img 
+            src={ai} 
+            alt="" 
+            loading="lazy"/>
         </div>
       </div>
     );

@@ -1,11 +1,9 @@
-import axios from "axios";
-
-const API_URL = "http://www.developermert.site/nestapi/auth/";
+import http from "../http-common";
 
 class AuthService {
   login(email: string, password: string) {
-    return axios
-      .post(API_URL + "login", {
+    return http
+      .post("/auth/login", {
         email,
         password
       })
@@ -23,7 +21,7 @@ class AuthService {
   }
 
   register(first_name: string, last_name: string, email: string, password: string) {
-    return axios.post(API_URL + "register", {
+    return http.post("/auth/register", {
       first_name,
       last_name,
       email,

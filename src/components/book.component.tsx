@@ -130,7 +130,7 @@ export default class Book extends Component<Props, State> {
   {currentBook ? (
     <div className="standart-form">
         <div className="book_app__header-content">
-          <h1 className="list-heading gradient__text ">Add a New Book</h1>
+          <h1 className="list-heading gradient__text ">Edit Book</h1>
         </div>
 
       <form>

@@ -90,8 +90,6 @@ class App extends Component<Props, State> {
      
         <Footer />
 
-
-        { /*<AuthVerify logOut={this.logOut}/> */}
       </div>
     );
   }

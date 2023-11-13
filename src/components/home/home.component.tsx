@@ -14,8 +14,11 @@ class Home extends React.Component {
       </div>
   
       <div className="book_app__header-image">
-        <img src={ai} alt=""/>
-      </div>
+        <img 
+          src={ai} 
+          alt="" 
+          loading="lazy"/>
+        </div>
     </div>
     );
   }
