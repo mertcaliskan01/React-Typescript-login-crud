@@ -24,7 +24,6 @@ export default class Book extends Component<Props, State> {
     this.getBook = this.getBook.bind(this);
     this.updatePublished = this.updatePublished.bind(this);
     this.updateBook = this.updateBook.bind(this);
-    this.deleteBook = this.deleteBook.bind(this);
 
     this.state = {
       currentBook: {
@@ -122,25 +121,18 @@ export default class Book extends Component<Props, State> {
       });
   }
 
-  deleteBook() {
-    BookDataService.delete(this.state.currentBook._id)
-      .then((response: any) => {
-        console.log(response.data);
-        this.props.history.push("/books");
-      })
-      .catch((e: Error) => {
-        console.log(e);
-      });
-  }
 
   render() {
     const { currentBook } = this.state;
 
     return (
-<div>
+<div className="col-md-6 mx-auto">
   {currentBook ? (
     <div className="standart-form">
-      <h3>Edit Book</h3>
+        <div className="book_app__header-content">
+          <h1 className="list-heading gradient__text ">Add a New Book</h1>
+        </div>
+
       <form>
         <div className="form-group">
           <label htmlFor="title">Title</label>
@@ -200,15 +192,8 @@ export default class Book extends Component<Props, State> {
           )}
 
           <button
-            className="btn btn-danger"
-            onClick={this.deleteBook}
-          >
-            Delete
-          </button>
-
-          <button
             type="submit"
-            className="btn btn-success"
+            className="btn btn-success "
             onClick={this.updateBook}
           >
             Update

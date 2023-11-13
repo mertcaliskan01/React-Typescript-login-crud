@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Redirect } from 'react-router-dom';
 import AuthService from "../services/auth.service";
-import registerImg from '../images/register.png';
+import registerImg from '../assets/logo.png';
 
 type Props = {};
 
@@ -121,7 +121,7 @@ export default class Register extends Component<Props, State> {
 
     return (
       <div className="col-md-6 mx-auto">
-        <div className="card card-container">
+        <div className="">
           <img
             src={registerImg}
             alt="register-img"

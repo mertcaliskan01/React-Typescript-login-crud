@@ -1,11 +1,14 @@
 import { Component, ChangeEvent } from "react";
 import BookDataService from "../services/book.service";
 import IBookData from '../types/book.type';
+import { Redirect } from "react-router-dom";
+import AuthService from "../services/auth.service";
 
 type Props = {};
 
 type State = IBookData & {
-  submitted: boolean
+  redirect: string | null;
+  submitted: boolean;
 };
 
 export default class AddBook extends Component<Props, State> {
@@ -23,8 +26,16 @@ export default class AddBook extends Component<Props, State> {
       description: "",
       price: 0,
       published: false,
-      submitted: false
+      submitted: false,
+      redirect: null
     };
+  }
+
+  componentDidMount() {
+    const currentUser = AuthService.getCurrentUser();
+
+    if (!currentUser) this.setState({ redirect: "/login" });
+
   }
 
   onChangeTitle(e: ChangeEvent<HTMLInputElement>) {
@@ -82,9 +93,17 @@ export default class AddBook extends Component<Props, State> {
   render() {
     const { submitted, title, description, price } = this.state;
 
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
+
     return (
-      <div className="standart-form">
-          <h3>Add a New Book</h3>
+      <div className="col-md-6 mx-auto">
+
+        <div className="book_app__header-content">
+          <h1 className="list-heading gradient__text ">Add a New Book</h1>
+        </div>
+
         {submitted ? (
           <div className="submission-success">
             <h4>You submitted successfully!</h4>
@@ -93,7 +112,7 @@ export default class AddBook extends Component<Props, State> {
             </button>
           </div>
         ) : (
-          <div className="submission-form">
+          <div className="submission-form ">
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input
@@ -133,9 +152,13 @@ export default class AddBook extends Component<Props, State> {
               />
             </div>
 
-            <button onClick={this.saveBook} className="btn btn-success">
-              Submit
-            </button>
+            <div className="button-group-2">
+              <button onClick={this.saveBook} className="btn btn-success save-button">
+                Submit
+              </button>
+            </div>
+
+            
           </div>
         )}
       </div>

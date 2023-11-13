@@ -4,7 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 import AuthService from "../services/auth.service";
-import profileImg from '../images/login.png';
+import profileImg from '../assets/logo.png';
 
 type Props = {};
 
@@ -96,7 +96,7 @@ export default class Login extends Component<Props, State> {
 
     return (
       <div className="col-md-6 mx-auto">
-        <div className="card card-container">
+        <div className=" ">
           <img
             src={profileImg}
             alt="profile-img"
