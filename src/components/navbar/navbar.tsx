@@ -26,12 +26,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, onLogout }) => {
             </Link>
           </p>
           <p>
-            <Link to={"/list"} className="nav-link">
+            <Link to={"/list"} className="navbar-brand">
               Book List
             </Link>
           </p>
               <p>
-                <Link to={"/add"} className="nav-link">
+                <Link to={"/add"} className="navbar-brand">
                   New Book
                 </Link>
               </p>
@@ -86,12 +86,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, onLogout }) => {
                 </Link>
               </p>
               <p>
-                <Link to={"/list"} className="nav-link">
+                <Link to={"/list"} className="navbar-brand">
                   Book List
                 </Link>
               </p>
               <p>
-                <Link to={"/add"} className="nav-link">
+                <Link to={"/add"} className="navbar-brand">
                   New Book
                 </Link>
               </p>
